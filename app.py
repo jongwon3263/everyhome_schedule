@@ -58,6 +58,6 @@ checkPoint = value_list[25] #체크
 messageForWorker = f"[{dayStart}] 실수령 ₩ {workerPay}원 \n > 고객 잔금 ₩ {balance}원 수령해 주시고 마무리해 주시면 감사하겠습니다 :) \n\n{service}\n\n{address}\n{customerPhone} ({customerName} 고객님)"
 
 # example = rowSelected[0]
-tab1.st.text_area("메시지",messageForWorker, height=250)
-tab1.st.text_area("메시지",height=500)
-tab2.st.dataframe(df.loc[3790:])
+tab1.text_area("메시지",messageForWorker, height=250)
+tab1.text_area("메시지",height=500)
+tab2.dataframe(df.loc[3790:])

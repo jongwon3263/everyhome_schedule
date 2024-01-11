@@ -3,6 +3,11 @@ import pandas as pd
 import itertools
 from streamlit_gsheets import GSheetsConnection
 
+st.set_page_config(
+    page_icon="💕",
+    page_title="에브리홈 일정 뷰어",
+    layout="wide"
+)
 
 st.sidebar.title('고객 휴대폰 번호 입력')
 phoneNumber = st.sidebar.text_input("number")

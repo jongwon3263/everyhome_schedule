@@ -3,12 +3,15 @@ import pandas as pd
 import itertools
 from streamlit_gsheets import GSheetsConnection
 
+st.write("DB username:", st.secrets["db_username"])
+st.write("DB password:", st.secrets["db_password"])
+
 st.sidebar.title('고객 휴대폰 번호 입력')
 phoneNumber = st.sidebar.text_input("number")
 
 conn = st.connection("gsheets", type=GSheetsConnection)
 
-data = conn.read(worksheet="에브리홈")
+data = conn.read("에브리홈")
 
 df = pd.DataFrame(data)
 

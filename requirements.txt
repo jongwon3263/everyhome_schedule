@@ -1,4 +1,0 @@
-streamlit
-pandas
-itertools
-st-gsheets-connection

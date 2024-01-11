@@ -58,5 +58,4 @@ messageForWorker = f"[{dayStart}] 실수령 ₩ {workerPay}원 \n > 고객 잔�
 # example = rowSelected[0]
 st.text_area("메시지",messageForWorker, height=250)
 st.text_area("메시지",height=500)
-
-# st.dataframe(df)
+st.dataframe(df)

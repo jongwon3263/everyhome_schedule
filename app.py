@@ -8,32 +8,19 @@ phoneNumber = st.sidebar.text_input("number")
 
 conn = st.connection("gsheets", type=GSheetsConnection)
 
-<<<<<<< HEAD
-data = conn.read(spreadsheet='https://docs.google.com/spreadsheets/d/1_IXE_zCjUANYAf2wKM0ektMTzqpn4SZIWm8Ct2WJ4xI/edit?usp=sharing', worksheet="에브리홈")
-=======
 data = conn.read(
     spreadsheet='https://docs.google.com/spreadsheets/d/1_IXE_zCjUANYAf2wKM0ektMTzqpn4SZIWm8Ct2WJ4xI/edit?usp=sharing', worksheet="에브리홈"
 )
->>>>>>> a74caef (commig log)
 
 df = pd.DataFrame(data)
 
-# result = data["고객 연락처"].str.contains(phoneNumber)
-# query = data.query("A3793:AA5438", "SELECT * WHERE G = '010-2437-4031'", 0)
-
 st.subheader("팀장 전달 메시지")
-# st.text(type(df))
 
-# c = lambda v: v.split(‘,’) 
 
 rowSelected = df.loc[df.phone == phoneNumber]
-# df["업체 단가"] = df["업체 단가"].apply(lambda int_num : '{:,}'.format(int_num))
-# list(rowSelected)
-# df.iloc[0].to_list()
-# list(df.iloc[0])
 
 value_list = rowSelected.values.tolist()
-# st.text(value_list)
+
 value_list = list(itertools.chain(*value_list))
 
 # 키값

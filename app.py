@@ -9,7 +9,7 @@ phoneNumber = st.sidebar.text_input("number")
 
 conn = st.connection("gsheets", type=GSheetsConnection)
 
-data = conn.read("everyhome2024")
+data = conn.read(worksheet="everyhome2024")
 
 df = pd.DataFrame(data)
 

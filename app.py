@@ -3,12 +3,13 @@ import pandas as pd
 import itertools
 from streamlit_gsheets import GSheetsConnection
 
+
 st.sidebar.title('고객 휴대폰 번호 입력')
 phoneNumber = st.sidebar.text_input("number")
 
 conn = st.connection("gsheets", type=GSheetsConnection)
 
-data = conn.read("에브리홈")
+data = conn.read("https://docs.google.com/spreadsheets/d/1_IXE_zCjUANYAf2wKM0ektMTzqpn4SZIWm8Ct2WJ4xI/edit?usp=sharing", "에브리홈")
 
 df = pd.DataFrame(data)
 

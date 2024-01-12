@@ -9,9 +9,10 @@ st.set_page_config(
     layout="wide"
 )
 
-st.sidebar.title('폰번호')
-# indexNumber = st.sidebar.text_input("number")
+st.sidebar.title('폰번호만. number 사용 금지')
+
 phoneNumber = st.sidebar.text_input("phone")
+indexNumber = st.sidebar.text_input("number")
 
 tab1, tab2 = st.tabs(["메시지","일정"])
 
@@ -19,8 +20,7 @@ conn = st.connection("gsheets", type=GSheetsConnection)
 data = conn.read(worksheet="everyhome2024", ttl="5m")
 df = pd.DataFrame(data)
 
-# rowSelected = df.loc[(df.phone == phoneNumber) | [indexNumber]]
-rowSelected = df.loc[df.phone == phoneNumber]
+rowSelected = df.loc[(df.phone == phoneNumber) | [indexNumber]]
 # rowSelectedIndex = df.loc[indexNumber]
 
 value_list = rowSelected.values.tolist()

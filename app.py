@@ -62,7 +62,7 @@ tab1.text_area("메모",height=500)
 
 
 
-selectWorker = st.selectbox('업체선택', ('로이', '클린뷰', '슈퍼', '케이', '버스터', '시티', '깨끗해짐', '착한청소', '공감', '굿홈케어', '스펀지', '온맘', '프렌즈', '황제', '은혜', '패밀리'))
+selectWorker = tab2.selectbox('업체선택', ('로이', '클린뷰', '슈퍼', '케이', '버스터', '시티', '깨끗해짐', '착한청소', '공감', '굿홈케어', '스펀지', '온맘', '프렌즈', '황제', '은혜', '패밀리'))
 
 # selected_Company = df.loc[df.Company == selectWorker]
 # tab2.dataframe(df.loc[3790:])

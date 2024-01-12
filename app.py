@@ -67,5 +67,5 @@ selectWorker = st.selectbox('업체선택', ('로이', '클린뷰', '슈퍼', '�
 # selected_Company = df.loc[df.Company == selectWorker]
 # tab2.dataframe(df.loc[3790:])
 # tab2.dataframe(df.Company.str.contains(selectWorker))
-selected_Company = data.loc[data['Company'].str.contains(selectWorker)]
-tab2.dataframe('업체별 일정', selected_Company)
+selected_Company = df.loc[df['Company'].str.contains(selectWorker)]
+tab2.dataframe(data=selected_Company)

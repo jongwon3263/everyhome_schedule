@@ -14,7 +14,7 @@ st.sidebar.title('폰번호만. number 사용 금지')
 phoneNumber = st.sidebar.text_input("phone")
 indexNumber = st.sidebar.text_input("number")
 
-tab1, tab2 = st.tabs(["메시지","일정"])
+tab1, tab2 = st.tabs(["메시지", "일정"])
 
 conn = st.connection("gsheets", type=GSheetsConnection)
 

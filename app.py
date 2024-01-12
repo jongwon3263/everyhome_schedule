@@ -18,7 +18,7 @@ tab1, tab2 = st.tabs(["메시지","일정"])
 
 conn = st.connection("gsheets", type=GSheetsConnection)
 
-data = conn.read(spreadsheet="https://docs.google.com/spreadsheets/d/1_IXE_zCjUANYAf2wKM0ektMTzqpn4SZIWm8Ct2WJ4xI/edit?usp=sharing", worksheet="everyhome2024", ttl="5m")
+data = conn.read(worksheet="everyhome2024", ttl="5m")
 
 df = pd.DataFrame(data)
 

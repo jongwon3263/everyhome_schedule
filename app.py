@@ -9,8 +9,8 @@ st.set_page_config(
     layout="wide"
 )
 
-st.sidebar.title('고객 휴대폰 번호')
-st.sidebar.text('하이픈포함, 2024매출표에 있는 자료에 한함')
+st.sidebar.title('고객 휴대폰 번호(하이픈 포함)')
+st.sidebar.text('2024매출표에 있는 자료에 한함')
 tab1, tab2 = st.tabs(["메시지", "일정"])
 
 phoneNumber = st.sidebar.text_input("phone")

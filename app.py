@@ -58,7 +58,7 @@ messageForWorker = f"[{dayStart}] 실수령 ₩ {workerPay}원 \n > 고객 잔�
 if st.button("전체 일정"):
     tab2.dataframe(df.loc[3790:])
 tab1.text_area("메시지",messageForWorker, height=250)
-tab1.text_area("메모",height=500)
+tab1.text_area("메모", height=500)
 
 
 
@@ -67,5 +67,7 @@ selectWorker = st.selectbox('업체선택', ('로이', '클린뷰', '슈퍼', '�
 # companySchedule = df.loc[df.Company == selectWorker]
 # tab2.dataframe(df.loc[3790:])
 # tab2.dataframe(df.Company.str.contains(selectWorker))
-# companySchedule = df[df['Company'].str.contains(selectWorker)]
-tab2.dataframe(data=df[df['Company'].str.contains(selectWorker)])
+companySchedule = df.loc[df['Company'].str.contains(selectWorker)]
+tab2.dataframe(data=companySchedule)
+
+# rowSelected = df.loc[df.phone == phoneNumber]

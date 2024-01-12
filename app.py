@@ -3,6 +3,11 @@ import pandas as pd
 import itertools
 from streamlit_gsheets import GSheetsConnection
 
+conn = st.connection("gsheets", type=GSheetsConnection)
+
+data = conn.read(worksheet="everyhome2024", ttl="5m")
+df = pd.DataFrame(data)
+
 st.set_page_config(
     page_icon="💕",
     page_title="에브리홈 일정 뷰어",
@@ -16,10 +21,6 @@ indexNumber = st.sidebar.text_input("number")
 
 tab1, tab2 = st.tabs(["메시지","일정"])
 
-conn = st.connection("gsheets", type=GSheetsConnection)
-
-data = conn.read(worksheet="everyhome2024", ttl="5m")
-df = pd.DataFrame(data)
 
 rowSelected = df.loc[(df.phone == phoneNumber) | [indexNumber]]
 # rowSelectedIndex = df.loc[indexNumber]

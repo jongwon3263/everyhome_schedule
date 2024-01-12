@@ -16,7 +16,7 @@ indexNumber = st.sidebar.text_input("number")
 
 tab1, tab2 = st.tabs(["메시지","일정"])
 
-conn = st.connection("gsheets", type=GSheetsConnection)
+conn = st.connection("gsheets", type=GSheetsConnection, ttl="10m")
 
 data = conn.read(worksheet="everyhome2024")
 df = pd.DataFrame(data)

@@ -18,7 +18,7 @@ indexNumber = st.sidebar.text_input("number")
 
 conn = st.connection("gsheets", type=GSheetsConnection)
 
-data = conn.read(worksheet="everyhome2024", ttl=5)
+data = conn.read(worksheet="everyhome2024")
 
 df = pd.DataFrame(data)
 
@@ -59,68 +59,8 @@ checkPoint = value_list[25] #체크
 messageForWorker = f"[{dayStart}] 실수령 ₩ {workerPay}원 \n > 고객 잔금 ₩ {balance}원 수령해 주시고 마무리해 주시면 감사하겠습니다 :) \n\n{service}\n\n{address}\n{customerPhone} ({customerName} 고객님)"
 
 
-
-# example = rowSelected[0]
-# tab1.subheader("팀장 전달 메시지")
-# tab2.button("전체 일정", on_click=tab2.dataframe(df.loc[3790:]))
-# if st.button("전체 일정"):
-#     tab2.dataframe(df.loc[3790:])
-
-#### 여기서부터 if 문
-# pay = workerPay
-# bal = balance
-
-# # if workerPay == balance:
-# #     tab1.text_area("메시지",messageForWorker1, height=250)
-# # elif workerPay > balance:
-# #     tab1.text_area("메시지",messageForWorker2, height=250)
-# # elif workerPay < balance:
-# #     tab1.text_area("메시지",messageForWorker3, height=250)
-
-  
-    
-
-# # insertMes = 
-
-# c = f1()
-
-# def finalMessage():
-    
-    
-    
-    
-    
-#     if pay == bal:
-#         insertMes = "감사하"
-#         return insertMes
-    
-#     elif pay > bal:
-#         insertMes = "차액 송금드리"
-#         return insertMes
-    
-#     elif pay < bal:
-#         insertMes = "차액 송금주시면 감사하"
-#         return insertMes
-    
-    
-    
-#     y = f"[{dayStart}] 실수령 ₩ {workerPay}원 \n > 고객 잔금 ₩ {balance}원 수령해 주시고 마무리해 주시면 {insertMes}겠습니다 :) \n\n{service}\n\n{address}\n{customerPhone} ({customerName} 고객님)"
-    
-#     return y
-    
-# tab1.text_area("메모",finalMessage(value_list), height=250)
-### 여기까지
 tab1.text_area("메모",messageForWorker, height=250)
 tab1.text_area("메모", height=500)
 
 
-
-# selectWorker = st.selectbox('업체선택', ('로이', '클린뷰', '슈퍼', '케이', '버스터', '시티', '깨끗해짐', '착한청소', '공감', '굿홈케어', '스펀지', '온맘', '프렌즈', '황제', '은혜', '패밀리'), index=None, placeholder="업체를 선택해 주세요")
-
-# companySchedule = df.loc[df.Company == selectWorker]
 tab2.dataframe(df.loc[3790:], height=1500)
-# tab2.dataframe(df.Company.str.contains(selectWorker))
-# companySchedule = df.loc[df['Company'].str.contains(selectWorker)]
-# tab2.dataframe(data=companySchedule)
-
-# rowSelected = df.loc[df.phone == phoneNumber]

@@ -10,7 +10,8 @@ st.set_page_config(
 )
 
 st.sidebar.title('고객 휴대폰 번호 입력')
-phoneNumber = st.sidebar.text_input("number")
+phoneNumber = st.sidebar.text_input("phone")
+indexNumber = st.sidebar.text_input("number")
 
 tab1, tab2 = st.tabs(["메시지","일정"])
 
@@ -18,7 +19,8 @@ conn = st.connection("gsheets", type=GSheetsConnection)
 data = conn.read(worksheet="everyhome2024", ttl="5m")
 df = pd.DataFrame(data)
 
-rowSelected = df.loc[df.phone == phoneNumber]
+rowSelected = df.loc[(df.phone == phoneNumber)|[indexNumber]]
+# rowSelectedIndex = df.loc[indexNumber]
 
 value_list = rowSelected.values.tolist()
 

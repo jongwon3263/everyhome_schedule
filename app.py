@@ -55,19 +55,19 @@ messageForWorker = f"[{dayStart}] 실수령 ₩ {workerPay}원 \n > 고객 잔�
 # example = rowSelected[0]
 # tab1.subheader("팀장 전달 메시지")
 # tab2.button("전체 일정", on_click=tab2.dataframe(df.loc[3790:]))
-if st.button("전체 일정"):
-    tab2.dataframe(df.loc[3790:])
+# if st.button("전체 일정"):
+#     tab2.dataframe(df.loc[3790:])
 tab1.text_area("메시지",messageForWorker, height=250)
 tab1.text_area("메모", height=500)
 
 
 
-selectWorker = st.selectbox('업체선택', ('로이', '클린뷰', '슈퍼', '케이', '버스터', '시티', '깨끗해짐', '착한청소', '공감', '굿홈케어', '스펀지', '온맘', '프렌즈', '황제', '은혜', '패밀리'), index=None, placeholder="업체를 선택해 주세요")
+# selectWorker = st.selectbox('업체선택', ('로이', '클린뷰', '슈퍼', '케이', '버스터', '시티', '깨끗해짐', '착한청소', '공감', '굿홈케어', '스펀지', '온맘', '프렌즈', '황제', '은혜', '패밀리'), index=None, placeholder="업체를 선택해 주세요")
 
 # companySchedule = df.loc[df.Company == selectWorker]
-# tab2.dataframe(df.loc[3790:])
+tab2.dataframe[(df.loc[3790:])|(df['phone'!=None])]
 # tab2.dataframe(df.Company.str.contains(selectWorker))
-companySchedule = df.loc[df['Company'].str.contains(selectWorker)]
-tab2.dataframe(data=companySchedule)
+# companySchedule = df.loc[df['Company'].str.contains(selectWorker)]
+# tab2.dataframe(data=companySchedule)
 
 # rowSelected = df.loc[df.phone == phoneNumber]
